@@ -1,0 +1,111 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme (day) */
+    --background: 210 40% 98%; /* Soft blue-white */
+    --foreground: 222 47% 11%; /* Dark blue */
+
+    --card: 210 40% 96%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 210 40% 98%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 252 59% 48%; /* Purple */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 197 65% 85%; /* Light blue */
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 90%;
+    --muted-foreground: 222 18% 45%;
+
+    --accent: 340 82% 85%; /* Pink */
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 80%;
+    --input: 214 32% 80%;
+    --ring: 222 47% 11%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark theme (night) */
+    --background: 230 41% 9%; /* Deep space blue */
+    --foreground: 210 40% 98%;
+
+    --card: 229 39% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 41% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 252 59% 54%; /* Bright purple */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 229 39% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 228 39% 18%;
+    --muted-foreground: 213 20% 70%;
+
+    --accent: 340 82% 60%; /* Deep pink */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 228 39% 23%;
+    --input: 228 39% 23%;
+    --ring: 212 27% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    overflow-x: hidden;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .star {
+    @apply absolute rounded-full bg-white opacity-80 shadow-[0_0_10px_2px_rgba(255,255,255,0.8)] dark:shadow-[0_0_10px_2px_rgba(255,255,255,0.9)];
+  }
+
+  .planet {
+    @apply rounded-full relative flex items-center justify-center transition-all duration-500 shadow-lg hover:scale-110 cursor-pointer;
+  }
+  
+  .orbit-path {
+    @apply absolute rounded-full border border-gray-200/20 dark:border-white/10;
+  }
+  
+  .section-container {
+    @apply max-w-4xl mx-auto px-4 py-16 opacity-0 transition-opacity duration-500;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold mb-6 text-center;
+  }
+  
+  .section-content {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-xl p-6 shadow-lg;
+  }
+}
