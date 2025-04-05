@@ -1,4 +1,5 @@
 
+![My Universe](images/my_universe.png)
 # My Universe - Personal Website Template
 
 A space-themed personal website template where your content orbits like planets in your own digital universe.
